@@ -162,11 +162,11 @@ export const currentFocusData = [
 export const certificationsData = [
   {
     id: 1,
-    name: "Full Stack Development Course",
+    name: "Full Stack Web Development (Delta)",
     issuer: "Apna College",
-    date: "Current",
-    status: "in-progress",
-    link: "#",
+    date: "June 2026",
+    status: "completed",
+    link: "/certificates/full-stack-delta.pdf",
   },
   {
     id: 2,

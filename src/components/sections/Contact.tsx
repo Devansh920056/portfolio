@@ -35,7 +35,7 @@ export function Contact() {
 
   return (
     <Section id="contact" title="Get In Touch" subtitle="Have a question or want to work together?">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
         
         {/* Contact Info & Resume CTA */}
         <div className="space-y-8">
@@ -52,20 +52,20 @@ export function Contact() {
             </p>
             
             <div className="flex flex-col space-y-3">
-              <a href={`mailto:${siteConfig.email}`} className="flex items-center space-x-3 p-3 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-primary/50 group transition-all">
-                <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+              <a href={`mailto:${siteConfig.email}`} className="flex items-center space-x-3 p-3 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-white/20 group transition-all">
+                <div className="p-2 bg-white/5 rounded-lg text-white group-hover:bg-white group-hover:text-black transition-all">
                   <Mail size={18} />
                 </div>
                 <span className="font-medium text-zinc-300 group-hover:text-white transition-colors">Email Me</span>
               </a>
-              <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-3 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-blue-500/50 group transition-all">
-                <div className="p-2 bg-blue-500/10 rounded-lg text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all">
+              <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-3 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-white/20 group transition-all">
+                <div className="p-2 bg-white/5 rounded-lg text-white group-hover:bg-white group-hover:text-black transition-all">
                   <FaLinkedin size={18} />
                 </div>
                 <span className="font-medium text-zinc-300 group-hover:text-white transition-colors">LinkedIn</span>
               </a>
-              <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-3 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-white/50 group transition-all">
-                <div className="p-2 bg-zinc-800 rounded-lg text-white group-hover:bg-white group-hover:text-black transition-all">
+              <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-3 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-white/20 group transition-all">
+                <div className="p-2 bg-white/5 rounded-lg text-white group-hover:bg-white group-hover:text-black transition-all">
                   <FaGithub size={18} />
                 </div>
                 <span className="font-medium text-zinc-300 group-hover:text-white transition-colors">GitHub</span>
@@ -78,12 +78,12 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="glass p-8 rounded-2xl border-l-4 border-l-primary bg-primary/5"
+            className="glass p-8 rounded-2xl border-l-4 border-l-zinc-300 bg-white/5"
           >
             <div className="flex items-start justify-between">
               <div>
                 <h3 className="text-xl font-bold mb-2 flex items-center">
-                  <FileText className="mr-2 text-primary" size={20} />
+                  <FileText className="mr-2 text-zinc-300" size={20} />
                   Resume
                 </h3>
                 <p className="text-zinc-400 text-sm mb-4">
@@ -111,7 +111,7 @@ export function Contact() {
         >
           <form onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl space-y-6">
             <div className="flex items-center space-x-2 mb-6">
-              <MessageSquare className="text-primary" />
+              <MessageSquare className="text-zinc-300" />
               <h3 className="text-xl font-bold">Send a Message</h3>
             </div>
 
@@ -125,7 +125,7 @@ export function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-white placeholder:text-zinc-600"
+                  className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/50 transition-all text-white placeholder:text-zinc-600"
                   placeholder="John Doe"
                 />
               </div>
@@ -138,7 +138,7 @@ export function Contact() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-white placeholder:text-zinc-600"
+                  className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/50 transition-all text-white placeholder:text-zinc-600"
                   placeholder="john@example.com"
                 />
               </div>
@@ -153,7 +153,7 @@ export function Contact() {
                 required
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-white placeholder:text-zinc-600"
+                className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/50 transition-all text-white placeholder:text-zinc-600"
                 placeholder="How can I help you?"
               />
             </div>
@@ -167,7 +167,7 @@ export function Contact() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-white placeholder:text-zinc-600 resize-none"
+                className="w-full px-4 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/50 transition-all text-white placeholder:text-zinc-600 resize-none"
                 placeholder="Your message here..."
               />
             </div>
@@ -175,7 +175,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-primary text-primary-foreground rounded-xl font-medium flex items-center justify-center space-x-2 hover:bg-primary/90 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full py-4 bg-white text-black rounded-xl font-medium flex items-center justify-center space-x-2 hover:bg-zinc-200 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
             >
               <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
               {!isSubmitting && <Send size={18} />}

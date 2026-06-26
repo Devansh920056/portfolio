@@ -7,7 +7,7 @@ import { GraduationCap, Award, Calendar } from "lucide-react";
 export function About() {
   return (
     <Section id="about" title="About Me" subtitle="A brief introduction about who I am and what I do.">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mt-8">
         
         <div className="lg:col-span-2 space-y-6">
           {aboutMe.description.map((paragraph, index) => (
@@ -21,10 +21,10 @@ export function About() {
 
         <div className="lg:col-span-1">
           <div className="glass-card rounded-2xl p-6 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <h3 className="text-xl font-bold mb-6 flex items-center space-x-2">
-              <GraduationCap className="text-primary" />
+              <GraduationCap className="text-zinc-300" />
               <span>Education</span>
             </h3>
 
@@ -50,7 +50,7 @@ export function About() {
                   <Award size={16} />
                   <span>CGPA</span>
                 </span>
-                <span className="font-medium text-primary text-xl">{aboutMe.cgpa}</span>
+                <span className="font-medium text-white text-xl">{aboutMe.cgpa}</span>
               </div>
             </div>
           </div>

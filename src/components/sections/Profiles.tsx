@@ -41,7 +41,7 @@ export function Profiles() {
 
   return (
     <Section id="profiles" title="Coding Profiles" subtitle="Consistently building, learning, and experimenting with modern technologies.">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
         
         {/* GitHub Stats Card */}
         <motion.div
@@ -49,7 +49,7 @@ export function Profiles() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass-card p-6 md:p-8 rounded-2xl border border-white/5 flex flex-col relative overflow-hidden group"
+          className="glass-card p-6 md:p-8 rounded-2xl flex flex-col relative overflow-hidden group"
         >
           <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
             <Github size={120} />
@@ -74,7 +74,7 @@ export function Profiles() {
           </div>
 
           <div className="mb-6 relative z-10">
-            <StatBox icon={Activity} label="Public Repositories" value={githubStats.repos} color="text-teal-400" />
+            <StatBox icon={Activity} label="Public Repositories" value={githubStats.repos} color="text-white" />
           </div>
 
           <div className="mt-auto relative z-10 space-y-4">
@@ -82,7 +82,7 @@ export function Profiles() {
               <h4 className="text-sm font-medium text-zinc-400 mb-2">Most Used Languages</h4>
               <div className="w-full bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-2 flex items-center justify-center">
                 <img 
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Devansh920056&layout=compact&theme=transparent&hide_border=true&text_color=E5E7EB&title_color=10B981" 
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Devansh920056&layout=compact&theme=transparent&hide_border=true&text_color=A1A1AA&title_color=FFFFFF" 
                   alt="Top Languages" 
                   className="w-full h-auto max-w-[300px]"
                 />
@@ -93,7 +93,7 @@ export function Profiles() {
               <h4 className="text-sm font-medium text-zinc-400 mb-2">Recent Contributions</h4>
               <div className="w-full bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-4 flex items-center justify-center overflow-x-auto overflow-y-hidden">
                 <img 
-                  src="https://ghchart.rshah.org/10B981/Devansh920056" 
+                  src="https://ghchart.rshah.org/A1A1AA/Devansh920056" 
                   alt="Devansh's GitHub Contributions" 
                   className="w-full h-auto min-w-[300px] opacity-80 hover:opacity-100 transition-opacity"
                 />
@@ -108,7 +108,7 @@ export function Profiles() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass-card p-6 md:p-8 rounded-2xl border border-white/5 flex flex-col relative overflow-hidden group"
+          className="glass-card p-6 md:p-8 rounded-2xl flex flex-col relative overflow-hidden group"
         >
           <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
             <Code2 size={120} />
@@ -117,7 +117,7 @@ export function Profiles() {
           <div className="flex items-center justify-between mb-8 relative z-10">
             <div className="flex items-center space-x-3">
               <div className="p-3 bg-zinc-900 rounded-xl border border-zinc-800">
-                <Code2 className="text-yellow-500" size={24} />
+                <Code2 className="text-white" size={24} />
               </div>
               <h3 className="text-2xl font-bold">LeetCode</h3>
             </div>
@@ -133,25 +133,25 @@ export function Profiles() {
           </div>
 
           <div className="mb-6 relative z-10">
-            <StatBox icon={Target} label="Problems Solved" value={leetcodeStats.solved} color="text-yellow-500" />
+            <StatBox icon={Target} label="Problems Solved" value={leetcodeStats.solved} color="text-white" />
           </div>
 
           <div className="mt-auto relative z-10 space-y-6">
             <div>
               <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                <Layers size={14} className="text-yellow-500" />
+                <Layers size={14} className="text-white" />
                 <span>Difficulty Breakdown</span>
               </h4>
               <div className="w-full bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-4 space-y-3">
-                <DifficultyBar name="Easy" count={leetcodeStats.easy} color="bg-teal-500" />
-                <DifficultyBar name="Medium" count={leetcodeStats.medium} color="bg-yellow-500" />
-                <DifficultyBar name="Hard" count={leetcodeStats.hard} color="bg-red-500" />
+                <DifficultyBar name="Easy" count={leetcodeStats.easy} color="bg-zinc-300" />
+                <DifficultyBar name="Medium" count={leetcodeStats.medium} color="bg-zinc-500" />
+                <DifficultyBar name="Hard" count={leetcodeStats.hard} color="bg-zinc-700" />
               </div>
             </div>
 
             <div>
               <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                <BookOpen size={14} className="text-primary" />
+                <BookOpen size={14} className="text-white" />
                 <span>Current Focus Areas</span>
               </h4>
               <div className="flex flex-wrap gap-2">

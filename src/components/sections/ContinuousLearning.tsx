@@ -11,12 +11,12 @@ export function ContinuousLearning() {
 
   return (
     <Section id="learning" title="Continuous Learning" subtitle="What I'm actively exploring and the credentials I'm pursuing.">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
         
         {/* Left Side: Current Focus */}
         <div className="space-y-6">
           <h3 className="text-xl font-bold flex items-center space-x-2 border-b border-zinc-800 pb-4">
-            <BookOpen className="text-primary" size={20} />
+            <BookOpen className="text-zinc-300" size={20} />
             <span>Current Technical Focus</span>
           </h3>
           <div className="space-y-4">
@@ -27,7 +27,7 @@ export function ContinuousLearning() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="p-5 rounded-xl border border-white/5 bg-zinc-900/50 hover:bg-zinc-900/80 hover:border-primary/20 transition-all"
+                className="p-5 rounded-xl border border-white/5 bg-zinc-900/50 hover:bg-zinc-900/80 hover:border-white/20 transition-all"
               >
                 <h4 className="font-bold text-sm text-zinc-200 mb-2">{item.title}</h4>
                 <p className="text-xs text-zinc-400 leading-relaxed">{item.description}</p>
@@ -39,16 +39,16 @@ export function ContinuousLearning() {
         {/* Right Side: Courses & Certifications */}
         <div className="space-y-6">
           <h3 className="text-xl font-bold flex items-center space-x-2 border-b border-zinc-800 pb-4">
-            <Award className="text-yellow-500" size={20} />
+            <Award className="text-zinc-300" size={20} />
             <span>Courses & Certifications</span>
           </h3>
           
           <div className="space-y-4">
             {inProgress.map((cert, index) => (
-              <CertCard key={cert.id} cert={cert} index={index} icon={<Clock size={16} className="text-yellow-500" />} />
+              <CertCard key={cert.id} cert={cert} index={index} icon={<Clock size={16} className="text-zinc-400" />} />
             ))}
             {completed.map((cert, index) => (
-              <CertCard key={cert.id} cert={cert} index={index} icon={<Award size={16} className="text-primary" />} />
+              <CertCard key={cert.id} cert={cert} index={index} icon={<Award size={16} className="text-white" />} />
             ))}
           </div>
         </div>
@@ -65,7 +65,7 @@ function CertCard({ cert, index, icon }: { cert: { id: number, name: string, iss
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="p-5 rounded-xl border border-white/5 bg-zinc-900/50 hover:bg-zinc-900/80 hover:border-primary/20 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+      className="p-5 rounded-xl border border-white/5 bg-zinc-900/50 hover:bg-zinc-900/80 hover:border-white/20 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
     >
       <div>
         <div className="flex items-center space-x-2 mb-1">
@@ -85,7 +85,7 @@ function CertCard({ cert, index, icon }: { cert: { id: number, name: string, iss
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View credential for ${cert.name}`}
-            className="text-primary hover:text-primary/80 transition-colors p-1"
+            className="text-white hover:text-zinc-300 transition-colors p-1"
           >
             <ExternalLink size={14} />
           </a>

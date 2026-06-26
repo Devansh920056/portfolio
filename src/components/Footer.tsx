@@ -10,7 +10,7 @@ export function Footer() {
           
           <div className="space-y-4">
             <h3 className="text-xl font-bold tracking-tighter">
-              {siteConfig.name.split(" ")[0]}<span className="text-primary">.</span>
+              {siteConfig.name.split(" ")[0]}<span className="text-white">.</span>
             </h3>
             <p className="text-sm text-zinc-500 max-w-xs">
               Full Stack Developer | AIML Student passionate about building real-world applications and continuously learning modern technologies.
@@ -20,10 +20,10 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-zinc-300">Quick Links</h4>
             <ul className="space-y-2 text-sm text-zinc-500">
-              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="#skills" className="hover:text-primary transition-colors">Skills</a></li>
-              <li><a href="#projects" className="hover:text-primary transition-colors">Projects</a></li>
-              <li><a href="#journey" className="hover:text-primary transition-colors">Journey</a></li>
+              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
+              <li><a href="#skills" className="hover:text-white transition-colors">Skills</a></li>
+              <li><a href="#projects" className="hover:text-white transition-colors">Projects</a></li>
+              <li><a href="#learning" className="hover:text-white transition-colors">Learning</a></li>
             </ul>
           </div>
 

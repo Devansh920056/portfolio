@@ -9,7 +9,7 @@ import { FaGithub as Github } from "react-icons/fa";
 export function Projects() {
   return (
     <Section id="projects" title="Featured Projects" subtitle="Deep dive into the architecture, challenges, and solutions of my key projects.">
-      <div className="flex flex-col space-y-32 mt-12">
+      <div className="flex flex-col space-y-32 mt-8">
         {projectsData.map((project) => (
           <motion.div
             key={project.id}
@@ -20,7 +20,7 @@ export function Projects() {
             className="flex flex-col gap-12 relative"
           >
             {/* Visual Header - Large Browser Window */}
-            <div className="w-full relative aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden glass-card group border border-zinc-800/80 shadow-2xl">
+            <div className="w-full relative aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden glass-card group">
               <div className="absolute inset-0 bg-zinc-900 flex flex-col">
                 <div className="h-10 bg-zinc-950 flex items-center px-4 space-x-2 border-b border-zinc-800/80">
                   <div className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -31,9 +31,9 @@ export function Projects() {
                   </div>
                 </div>
                 <div className="flex-1 p-8 flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-b from-zinc-900 to-zinc-950">
-                  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#10B981_1px,transparent_1px)] [background-size:24px_24px]" />
-                  <span className="text-white font-bold text-3xl md:text-5xl tracking-wider px-8 py-4 rounded-xl bg-zinc-900/90 border border-primary/30 shadow-[0_0_50px_rgba(16,185,129,0.2)] flex items-center space-x-4 relative z-10">
-                    <span className="w-3 h-3 rounded-full bg-primary animate-pulse shadow-[0_0_15px_rgba(16,185,129,1)]" />
+                  <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
+                  <span className="text-white font-bold text-3xl md:text-5xl tracking-wider px-8 py-4 rounded-xl bg-zinc-900/90 border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.05)] flex items-center space-x-4 relative z-10">
+                    <span className="w-3 h-3 rounded-full bg-white animate-pulse shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
                     <span>{project.title}</span>
                   </span>
                 </div>
@@ -48,7 +48,7 @@ export function Projects() {
                     <h3 className="text-4xl font-bold">{project.title}</h3>
                     <div className="flex flex-wrap items-center gap-2">
                       {project.status && (
-                        <span className="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold tracking-wide uppercase">
+                        <span className="px-3 py-1 bg-white/10 text-white border border-white/20 rounded-full text-xs font-bold tracking-wide uppercase">
                           {project.status}
                         </span>
                       )}
@@ -69,7 +69,7 @@ export function Projects() {
                     </a>
                   )}
                   {project.liveUrl && (
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-primary hover:text-primary-foreground bg-primary/10 hover:bg-primary border border-primary/20 px-4 py-2 rounded-lg transition-colors">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-white hover:text-black bg-white/5 hover:bg-white border border-white/10 px-4 py-2 rounded-lg transition-colors">
                       <ExternalLink size={20} />
                       <span className="font-medium">Live Demo</span>
                     </a>
@@ -79,7 +79,7 @@ export function Projects() {
 
               {/* Problem Solved */}
               {project.problemSolved && (
-                <div className="mb-12 glass-card p-6 border-l-4 border-l-primary rounded-r-xl">
+                <div className="mb-12 glass-card p-6 border-l-4 border-l-zinc-300 rounded-r-xl">
                   <h4 className="text-lg font-bold text-white mb-2">The Problem & Solution</h4>
                   <p className="text-zinc-400">{project.problemSolved}</p>
                 </div>
@@ -89,13 +89,13 @@ export function Projects() {
                 {/* Features */}
                 <div>
                   <h4 className="text-xl font-bold mb-6 flex items-center space-x-2 border-b border-zinc-800 pb-2">
-                    <CheckCircle2 className="text-primary" size={20} />
+                    <CheckCircle2 className="text-white" size={20} />
                     <span>Key Features</span>
                   </h4>
                   <ul className="space-y-3">
                     {project.features.map((feature, i) => (
                       <li key={i} className="flex items-start text-zinc-300">
-                        <span className="text-primary mr-3 mt-1 text-xs">▹</span>
+                        <span className="text-zinc-500 mr-3 mt-1 text-xs">▹</span>
                         <span className="text-sm md:text-base">{feature}</span>
                       </li>
                     ))}
@@ -105,12 +105,12 @@ export function Projects() {
                 {/* Tech Stack */}
                 <div>
                   <h4 className="text-xl font-bold mb-6 flex items-center space-x-2 border-b border-zinc-800 pb-2">
-                    <Layers className="text-primary" size={20} />
+                    <Layers className="text-white" size={20} />
                     <span>Core Technologies</span>
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech) => (
-                      <span key={tech} className="font-mono text-sm text-primary bg-primary/10 px-3 py-1.5 rounded-md border border-primary/20">
+                      <span key={tech} className="font-mono text-sm text-zinc-300 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
                         {tech}
                       </span>
                     ))}
@@ -136,7 +136,7 @@ export function Projects() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {project.challenges && (
                     <div className="glass-card p-6 rounded-xl border border-zinc-800">
-                      <h4 className="text-lg font-bold mb-4 flex items-center space-x-2 text-yellow-500/90">
+                      <h4 className="text-lg font-bold mb-4 flex items-center space-x-2 text-white">
                         <AlertTriangle size={18} />
                         <span>Challenges</span>
                       </h4>
@@ -152,7 +152,7 @@ export function Projects() {
                   )}
                   {project.learnings && (
                     <div className="glass-card p-6 rounded-xl border border-zinc-800">
-                      <h4 className="text-lg font-bold mb-4 flex items-center space-x-2 text-primary">
+                      <h4 className="text-lg font-bold mb-4 flex items-center space-x-2 text-white">
                         <Lightbulb size={18} />
                         <span>Learnings</span>
                       </h4>
@@ -179,9 +179,9 @@ export function Projects() {
 
 function ArchitectureCard({ icon: Icon, title, techs }: { icon: React.ElementType; title: string; techs: string[] }) {
   return (
-    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 hover:border-primary/20 transition-colors">
+    <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors">
       <div className="flex items-center space-x-3 mb-4">
-        <div className="p-2 bg-primary/10 rounded-lg text-primary">
+        <div className="p-2 bg-white/5 rounded-lg text-zinc-300">
           <Icon size={18} />
         </div>
         <h5 className="font-bold text-zinc-200">{title}</h5>

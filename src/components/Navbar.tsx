@@ -10,7 +10,7 @@ const navLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Journey", href: "#journey" },
+  { name: "Learning", href: "#learning" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -21,27 +21,24 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 10);
 
-      // Active section highlighting
-      const sections = navLinks.map(link => link.name.toLowerCase());
-      const scrollPosition = window.scrollY + 200; // Offset
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      let currentActive = "";
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (
-          element &&
-          element.offsetTop <= scrollPosition &&
-          element.offsetTop + element.offsetHeight > scrollPosition
-        ) {
-          setActiveSection(section);
-          return;
+      for (const link of navLinks) {
+        const sectionId = link.name.toLowerCase();
+        const element = document.getElementById(sectionId);
+        if (element && element.offsetTop <= scrollPosition) {
+          currentActive = sectionId;
         }
       }
-      setActiveSection("");
+
+      setActiveSection(currentActive);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check on mount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -56,8 +53,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "py-4 glass border-b border-white/5" : "py-6 bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
+        isScrolled ? "py-4 bg-zinc-950/80 backdrop-blur-md border-white/10 shadow-sm" : "py-6 bg-transparent border-transparent"
       )}
     >
       <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
@@ -65,9 +62,9 @@ export function Navbar() {
           href="#home" 
           aria-label="Home"
           onClick={(e) => { e.preventDefault(); scrollTo("#home"); }}
-          className="text-xl font-bold tracking-tighter hover:text-primary transition-colors"
+          className="text-xl font-bold tracking-tighter hover:text-white transition-colors"
         >
-          {siteConfig.name.split(" ")[0]}<span className="text-primary">.</span>
+          {siteConfig.name.split(" ")[0]}<span className="text-white">.</span>
         </a>
 
         {/* Desktop Nav */}
@@ -91,7 +88,7 @@ export function Navbar() {
               {activeSection === link.name.toLowerCase() && (
                 <motion.div
                   layoutId="activeNavbarIndicator"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-zinc-300 to-zinc-500 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.2)]"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -100,7 +97,7 @@ export function Navbar() {
           <a
             href="#contact"
             onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
-            className="px-5 py-2 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all text-sm font-medium border border-primary/20 hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]"
+            className="px-5 py-2 rounded-full bg-white/5 text-white hover:bg-white/10 hover:-translate-y-0.5 transition-all text-sm font-medium border border-white/10 hover:border-white/30 hover:shadow-[0_4px_15px_rgba(255,255,255,0.05)]"
           >
             Let&apos;s Connect
           </a>

@@ -44,8 +44,8 @@ export function Hero() {
               <span className="text-xs font-medium uppercase tracking-wider">Available for Opportunities</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Hi, I&apos;m <span className="text-gradient">{siteConfig.name}</span>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gradient pb-2">
+              Hi, I&apos;m {siteConfig.name}
             </h1>
 
             <h2 className="text-2xl md:text-3xl text-zinc-300 font-medium">
@@ -70,7 +70,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4 justify-center lg:justify-start">
               <a
                 href="#projects"
-                className="group relative px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium flex items-center space-x-2 overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
+                className="group relative px-6 py-3 rounded-full bg-white text-black font-medium flex items-center space-x-2 overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]"
               >
                 <span className="relative z-10">View Projects</span>
                 <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -111,7 +111,7 @@ export function Hero() {
           >
             <div className="relative w-full aspect-square max-w-md flex items-center justify-center lg:justify-end">
               {/* Subtle ambient glow */}
-              <div className="absolute right-0 rounded-full bg-gradient-to-tr from-primary/20 to-teal-500/20 blur-[80px] w-full h-full" />
+              <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_60%)] blur-[40px] w-full h-full" />
               
               {/* Central Neural/Tech Node Design */}
               <div className="relative w-72 h-72 lg:w-96 lg:h-96">
@@ -119,19 +119,19 @@ export function Hero() {
                 <motion.div 
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full border border-zinc-800/80 border-t-primary/50"
+                  className="absolute inset-0 rounded-full border border-zinc-800/80 border-t-white/20"
                 />
                 
                 {/* Middle rotating ring (reverse) */}
                 <motion.div 
                   animate={{ rotate: -360 }}
                   transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-4 lg:inset-6 rounded-full border border-zinc-800/80 border-b-teal-500/50"
+                  className="absolute inset-4 lg:inset-6 rounded-full border border-zinc-800/80 border-b-white/20"
                 />
 
                 {/* Photo Container Ring */}
-                <div className="absolute inset-10 lg:inset-12 rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-md shadow-[inset_0_0_30px_rgba(16,185,129,0.1)] p-2 transition-all">
-                  <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/30 shadow-[0_0_40px_rgba(16,185,129,0.3)] bg-zinc-950 flex items-center justify-center group">
+                <div className="absolute inset-10 lg:inset-12 rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-md shadow-[inset_0_0_30px_rgba(255,255,255,0.02)] p-2 transition-all">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(255,255,255,0.05)] bg-zinc-950 flex items-center justify-center group">
                     
                     {/* Fallback Placeholder (shows if profile.jpg is missing) */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-zinc-800 to-zinc-900 flex flex-col items-center justify-center z-0">
@@ -161,7 +161,7 @@ export function Hero() {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute top-10 -right-4 lg:top-12 lg:-right-6 w-12 h-12 lg:w-16 lg:h-16 rounded-xl glass-card border border-white/10 flex items-center justify-center backdrop-blur-xl shadow-xl"
                 >
-                  <span className="text-teal-400 font-mono text-xs lg:text-sm font-bold">AI</span>
+                  <span className="text-zinc-300 font-mono text-xs lg:text-sm font-bold">AI</span>
                 </motion.div>
 
                 <motion.div 
@@ -169,7 +169,7 @@ export function Hero() {
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   className="absolute bottom-12 -left-6 lg:bottom-16 lg:-left-8 w-14 h-14 lg:w-20 lg:h-20 rounded-xl glass-card border border-white/10 flex items-center justify-center backdrop-blur-xl shadow-xl"
                 >
-                  <span className="text-primary font-mono text-xs lg:text-sm font-bold">WEB</span>
+                  <span className="text-zinc-300 font-mono text-xs lg:text-sm font-bold">WEB</span>
                 </motion.div>
 
                 <motion.div 
@@ -197,7 +197,7 @@ function SocialLink({ href, icon, ariaLabel }: { href: string; icon: React.React
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
-      className="p-3 rounded-full bg-zinc-900 border border-zinc-800 hover:border-primary/50 hover:text-primary transition-all hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+      className="p-3 rounded-full bg-zinc-900 border border-zinc-800 hover:border-white/30 hover:text-white transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]"
     >
       {icon}
     </a>

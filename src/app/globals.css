@@ -20,20 +20,20 @@
 }
 
 :root {
-  /* Black + Emerald Theme */
-  --background: #020617;
-  --foreground: #E5E7EB;
+  /* Premium Monochrome Theme */
+  --background: #050505;
+  --foreground: #FAFAFA;
   
-  --primary: #10B981; /* Emerald */
-  --primary-foreground: #020617;
+  --primary: #FFFFFF;
+  --primary-foreground: #050505;
   
-  --card: #111827;
-  --card-foreground: #E5E7EB;
+  --card: #141414;
+  --card-foreground: #FAFAFA;
   
-  --border: #1F2937;
+  --border: rgba(255, 255, 255, 0.08);
   
-  --accent: #14B8A6; /* Teal */
-  --accent-foreground: #E5E7EB;
+  --accent: #A1A1AA; /* Silver/Gray */
+  --accent-foreground: #FAFAFA;
 }
 
 body {
@@ -52,46 +52,50 @@ body {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: #27272A;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #3F3F46;
 }
 
 /* Base styles for smooth scrolling */
 html {
   scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 /* Utility for glassmorphism */
 .glass {
-  background: rgba(18, 18, 18, 0.4);
+  background: rgba(10, 10, 10, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-  transform: scale(1.01);
-  border-color: rgba(16, 185, 129, 0.2); /* Emerald glow */
-  box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.02);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #10B981, #14B8A6);
+  background: linear-gradient(to bottom right, #FFFFFF, #888888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 /* Accessibility Focus States */

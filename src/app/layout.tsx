@@ -77,9 +77,10 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        <div className="relative flex min-h-screen flex-col selection:bg-primary/30">
-          {/* Subtle background glow effect */}
-          <div className="pointer-events-none fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(20,184,166,0.15),rgba(255,255,255,0))]" />
+        <div className="relative flex min-h-screen flex-col selection:bg-white/20">
+          {/* Subtle background effects */}
+          <div className="pointer-events-none fixed inset-0 z-[-2] bg-dot-matrix" />
+          <div className="pointer-events-none fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,255,0.03),rgba(0,0,0,0))]" />
           {children}
         </div>
       </body>
