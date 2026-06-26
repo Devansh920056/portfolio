@@ -62,9 +62,14 @@ export function Navbar() {
           href="#home" 
           aria-label="Home"
           onClick={(e) => { e.preventDefault(); scrollTo("#home"); }}
-          className="text-xl font-bold tracking-tighter hover:text-white transition-colors"
+          className="hover:opacity-80 transition-opacity flex items-center"
         >
-          {siteConfig.name.split(" ")[0]}<span className="text-white">.</span>
+          <img 
+            src="/branding/logo-wordmark.svg?v=6" 
+            alt="Devansh." 
+            className="h-8 w-auto" 
+            style={{ background: 'transparent' }}
+          />
         </a>
 
         {/* Desktop Nav */}

@@ -9,9 +9,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           
           <div className="space-y-4">
-            <h3 className="text-xl font-bold tracking-tighter">
-              {siteConfig.name.split(" ")[0]}<span className="text-white">.</span>
-            </h3>
+            <a href="#home" aria-label="Home" className="inline-block hover:opacity-80 transition-opacity">
+              <img 
+                src="/branding/logo-wordmark.svg?v=6" 
+                alt="Devansh." 
+                className="h-8 w-auto" 
+                style={{ background: 'transparent' }}
+              />
+            </a>
             <p className="text-sm text-zinc-500 max-w-xs">
               Full Stack Developer | AIML Student passionate about building real-world applications and continuously learning modern technologies.
             </p>
