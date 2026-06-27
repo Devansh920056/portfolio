@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://devanshzode.dev'),
-  title: "Devansh Zode",
+  title: "Devansh Zode | Full Stack Developer",
   description: "Full Stack Developer and AIML Student passionate about building real-world applications and continuously learning modern technologies.",
   keywords: ["Devansh Zode", "Portfolio", "Full Stack Developer", "AIML", "Next.js", "React", "Web Developer"],
   openGraph: {
