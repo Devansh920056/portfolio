@@ -16,24 +16,53 @@ export function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setSubmitMessage("");
     
-    const mailtoLink = `mailto:${siteConfig.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-    
-    window.location.href = mailtoLink;
-
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          ...formData
+        }),
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitStatus("success");
+        setSubmitMessage("Message sent successfully! I'll get back to you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+        setSubmitMessage(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      setSubmitMessage("Failed to send message. Please try again later.");
+    } finally {
       setIsSubmitting(false);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 500);
+      setTimeout(() => {
+        setSubmitStatus("idle");
+        setSubmitMessage("");
+      }, 5000);
+    }
   };
 
   return (
@@ -183,6 +212,20 @@ export function Contact() {
               <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
               {!isSubmitting && <Send size={18} />}
             </button>
+
+            {submitStatus !== "idle" && (
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`p-4 rounded-xl text-sm font-medium flex items-center justify-center text-center border ${
+                  submitStatus === "success" 
+                    ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" 
+                    : "bg-red-500/10 text-red-400 border-red-500/20"
+                }`}
+              >
+                {submitMessage}
+              </motion.div>
+            )}
           </form>
         </motion.div>
 
