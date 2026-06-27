@@ -24,13 +24,16 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for actual form submission logic
     setIsSubmitting(true);
+    
+    const mailtoLink = `mailto:${siteConfig.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    
+    window.location.href = mailtoLink;
+
     setTimeout(() => {
-      alert("Message sent successfully! (Demo)");
       setIsSubmitting(false);
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1500);
+    }, 500);
   };
 
   return (
