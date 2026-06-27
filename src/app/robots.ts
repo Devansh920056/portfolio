@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://devanshzode.com/sitemap.xml',
+    sitemap: 'https://devanshzode.dev/sitemap.xml',
   };
 }
