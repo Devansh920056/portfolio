@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { siteConfig } from "@/data";
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -64,6 +63,7 @@ export function Navbar() {
           onClick={(e) => { e.preventDefault(); scrollTo("#home"); }}
           className="hover:opacity-80 transition-opacity flex items-center"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src="/branding/logo-wordmark.svg?v=6" 
             alt="Devansh." 

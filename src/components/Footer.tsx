@@ -10,6 +10,7 @@ export function Footer() {
           
           <div className="space-y-4">
             <a href="#home" aria-label="Home" className="inline-block hover:opacity-80 transition-opacity">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src="/branding/logo-wordmark.svg?v=6" 
                 alt="Devansh." 
