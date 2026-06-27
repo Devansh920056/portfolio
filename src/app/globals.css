@@ -44,19 +44,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar */
+/* Premium Minimalist Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272A;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05); /* Barely visible */
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3F3F46;
+  background: rgba(255, 255, 255, 0.2); /* Brightens when hovered */
 }
 
 /* Base styles for smooth scrolling */
