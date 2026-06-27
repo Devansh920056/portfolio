@@ -24,12 +24,12 @@ export function Profiles() {
       .catch(console.error);
 
     // Fetch LeetCode Stats
-    fetch("https://leetcode-api-faisalshohag.vercel.app/Devansh2005")
+    fetch("https://alfa-leetcode-api.onrender.com/Devansh2005/solved")
       .then(res => res.json())
       .then(data => {
-        if (data.totalSolved !== undefined) {
+        if (data.solvedProblem !== undefined) {
           setLeetcodeStats({ 
-            solved: data.totalSolved.toString(), 
+            solved: data.solvedProblem.toString(), 
             easy: data.easySolved,
             medium: data.mediumSolved,
             hard: data.hardSolved
