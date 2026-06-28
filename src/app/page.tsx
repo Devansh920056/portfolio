@@ -2,9 +2,8 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { WhatIBring } from "@/components/sections/WhatIBring";
-import { Skills } from "@/components/sections/Skills";
+import { BentoSkills } from "@/components/sections/BentoSkills";
 import { Projects } from "@/components/sections/Projects";
-import { ContinuousLearning } from "@/components/sections/ContinuousLearning";
 import { Profiles } from "@/components/sections/Profiles";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/Footer";
@@ -16,9 +15,8 @@ export default function Home() {
       <Hero />
       <About />
       <WhatIBring />
-      <Skills />
+      <BentoSkills />
       <Projects />
-      <ContinuousLearning />
       <Profiles />
       <Contact />
       <Footer />

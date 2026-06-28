@@ -88,19 +88,19 @@ export function Contact() {
                 <div className="p-2 bg-white/5 rounded-lg text-white group-hover:bg-white group-hover:text-black transition-all">
                   <Mail size={18} />
                 </div>
-                <span className="font-medium text-zinc-300 group-hover:text-white transition-colors">Email Me</span>
+                <span className="font-medium text-zinc-300 group-hover:text-accent transition-colors">Email Me</span>
               </a>
               <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-3 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-white/20 group transition-all">
                 <div className="p-2 bg-white/5 rounded-lg text-white group-hover:bg-white group-hover:text-black transition-all">
                   <FaLinkedin size={18} />
                 </div>
-                <span className="font-medium text-zinc-300 group-hover:text-white transition-colors">LinkedIn</span>
+                <span className="font-medium text-zinc-300 group-hover:text-accent transition-colors">LinkedIn</span>
               </a>
               <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 p-3 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-white/20 group transition-all">
                 <div className="p-2 bg-white/5 rounded-lg text-white group-hover:bg-white group-hover:text-black transition-all">
                   <FaGithub size={18} />
                 </div>
-                <span className="font-medium text-zinc-300 group-hover:text-white transition-colors">GitHub</span>
+                <span className="font-medium text-zinc-300 group-hover:text-accent transition-colors">GitHub</span>
               </a>
             </div>
           </motion.div>
@@ -143,7 +143,7 @@ export function Contact() {
         >
           <form onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl space-y-6">
             <div className="flex items-center space-x-2 mb-6">
-              <MessageSquare className="text-zinc-300" />
+              <MessageSquare className="text-accent" />
               <h3 className="text-xl font-bold">Send a Message</h3>
             </div>
 

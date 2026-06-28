@@ -23,7 +23,7 @@ export function WhatIBring() {
               className="glass-card p-8 rounded-2xl group"
             >
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Icon className="text-zinc-300" size={24} />
+                <Icon className="text-accent" size={24} />
               </div>
               <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
               <p className="text-zinc-400 leading-relaxed">{item.description}</p>

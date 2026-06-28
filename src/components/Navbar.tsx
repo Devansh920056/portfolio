@@ -7,9 +7,8 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
+  { name: "Expertise", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Learning", href: "#learning" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -26,7 +25,7 @@ export function Navbar() {
       let currentActive = "";
 
       for (const link of navLinks) {
-        const sectionId = link.name.toLowerCase();
+        const sectionId = link.href.replace('#', '');
         const element = document.getElementById(sectionId);
         if (element && element.offsetTop <= scrollPosition) {
           currentActive = sectionId;
@@ -83,17 +82,17 @@ export function Navbar() {
                 scrollTo(link.href);
               }}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-foreground relative py-1",
-                activeSection === link.name.toLowerCase()
-                  ? "text-primary"
+                "text-sm font-medium transition-colors hover:text-zinc-200 relative py-1",
+                activeSection === link.href.replace('#', '')
+                  ? "text-zinc-200"
                   : "text-zinc-400"
               )}
             >
               {link.name}
-              {activeSection === link.name.toLowerCase() && (
+              {activeSection === link.href.replace('#', '') && (
                 <motion.div
                   layoutId="activeNavbarIndicator"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-zinc-300 to-zinc-500 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-accent to-zinc-500/50 rounded-full"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
@@ -102,7 +101,7 @@ export function Navbar() {
           <a
             href="#contact"
             onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
-            className="px-5 py-2 rounded-full bg-white/5 text-white hover:bg-white/10 hover:-translate-y-0.5 transition-all text-sm font-medium border border-white/10 hover:border-white/30 hover:shadow-[0_4px_15px_rgba(255,255,255,0.05)]"
+            className="px-5 py-2 rounded-full bg-white/5 text-white hover:bg-white/10 hover:-translate-y-0.5 transition-all text-sm font-medium border border-white/10 hover:border-accent/30 hover:shadow-[0_4px_15px_rgba(161,161,170,0.05)] hover:text-accent"
           >
             Let&apos;s Connect
           </a>
@@ -139,7 +138,7 @@ export function Navbar() {
                   }}
                   className={cn(
                     "text-lg font-medium transition-colors",
-                    activeSection === link.name.toLowerCase()
+                    activeSection === link.href.replace('#', '')
                       ? "text-primary"
                       : "text-zinc-400 hover:text-foreground"
                   )}

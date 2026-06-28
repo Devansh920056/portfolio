@@ -24,7 +24,7 @@ export function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <h3 className="text-xl font-bold mb-6 flex items-center space-x-2">
-              <GraduationCap className="text-zinc-300" />
+              <GraduationCap className="text-accent" />
               <span>Education</span>
             </h3>
 

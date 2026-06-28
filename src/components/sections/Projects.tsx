@@ -181,7 +181,7 @@ function ArchitectureCard({ icon: Icon, title, techs }: { icon: React.ElementTyp
   return (
     <div className="bg-zinc-900/50 border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors">
       <div className="flex items-center space-x-3 mb-4">
-        <div className="p-2 bg-white/5 rounded-lg text-zinc-300">
+        <div className="p-2 bg-white/5 rounded-lg text-accent">
           <Icon size={18} />
         </div>
         <h5 className="font-bold text-zinc-200">{title}</h5>
