@@ -13,8 +13,8 @@ export function Profiles() {
   const [leetcodeStats, setLeetcodeStats] = useState({ solved: "...", easy: 0, medium: 0, hard: 0 });
 
   useEffect(() => {
-    // Fetch GitHub Stats
-    fetch("https://api.github.com/users/Devansh920056")
+    // Fetch GitHub Stats from our internal API route
+    fetch("/api/github")
       .then(res => res.json())
       .then(data => {
         if (data.public_repos !== undefined) {
