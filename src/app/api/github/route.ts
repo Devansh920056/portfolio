@@ -3,8 +3,8 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     const response = await fetch('https://api.github.com/users/Devansh920056', {
-      // Cache the result for 1 hour
-      next: { revalidate: 3600 } 
+      // Don't aggressively cache so stats stay perfectly in sync
+      next: { revalidate: 0 } 
     });
 
     const data = await response.json();

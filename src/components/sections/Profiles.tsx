@@ -12,8 +12,8 @@ export function Profiles() {
   const [githubStats, setGithubStats] = useState({ repos: "..." });
 
   useEffect(() => {
-    // Fetch GitHub Stats from our internal API route
-    fetch("/api/github")
+    // Fetch directly from GitHub to avoid server-side rate limits and aggressive Next.js caching
+    fetch("https://api.github.com/users/Devansh920056")
       .then(res => res.json())
       .then(data => {
         if (data.public_repos !== undefined) {
