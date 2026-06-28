@@ -23,8 +23,8 @@ export function Profiles() {
       })
       .catch(console.error);
 
-    // Fetch LeetCode Stats
-    fetch("https://alfa-leetcode-api.onrender.com/Devansh2005/solved")
+    // Fetch LeetCode Stats from our internal API route
+    fetch("/api/leetcode")
       .then(res => res.json())
       .then(data => {
         if (data.solvedProblem !== undefined) {
