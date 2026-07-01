@@ -9,7 +9,6 @@ const navLinks = [
   { name: "About", href: "#about" },
   { name: "Expertise", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -146,6 +145,16 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo("#contact");
+                }}
+                className="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white/5 text-white font-medium border border-white/10 hover:bg-white/10 transition-colors"
+              >
+                Let&apos;s Connect
+              </a>
             </nav>
           </motion.div>
         )}
