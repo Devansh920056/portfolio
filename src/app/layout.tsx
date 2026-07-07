@@ -32,6 +32,15 @@ export const metadata: Metadata = {
     title: "Devansh Zode | Full Stack Developer",
     description: "Full Stack Developer and AIML Student passionate about building real-world applications and continuously learning modern technologies.",
   },
+  icons: {
+    icon: [
+      { url: '/branding/logo-icon.png', sizes: 'any' },
+      { url: '/branding/logo-icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
