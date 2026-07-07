@@ -68,7 +68,7 @@ export function Profiles() {
               <h4 className="text-sm font-medium text-zinc-400 mb-2">Most Used Languages</h4>
               <div className="w-full bg-zinc-900/50 rounded-xl border border-zinc-800/50 p-2 flex items-center justify-center">
                 <img 
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Devansh920056&layout=compact&theme=transparent&hide_border=true&text_color=A1A1AA&title_color=FFFFFF" 
+                  src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Devansh920056&layout=compact&theme=transparent&hide_border=true&text_color=A1A1AA&title_color=FFFFFF" 
                   alt="Top Languages" 
                   className="w-full h-auto max-w-[300px]"
                 />
