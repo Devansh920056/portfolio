@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     title: "Devansh Zode | Full Stack Developer",
     description: "Full Stack Developer and AIML Student passionate about building real-world applications and continuously learning modern technologies.",
   },
+  alternates: {
+    canonical: 'https://devanshzode.dev',
+  },
   robots: {
     index: true,
     follow: true,
