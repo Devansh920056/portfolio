@@ -20,7 +20,7 @@ export const siteConfig = {
 export const aboutMe = {
   degree: "B.E. in Artificial Intelligence & Machine Learning",
   graduation: "June 2027",
-  cgpa: "7.80/10",
+  cgpa: "8.05/10",
   description: [
     "As a final-year Artificial Intelligence & Machine Learning student, I combine my academic foundation in data with practical full-stack development skills.",
     "I enjoy building web applications using Next.js and the MERN stack, taking features from database design to responsive frontend implementation.",
